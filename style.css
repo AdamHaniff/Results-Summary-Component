@@ -10,6 +10,7 @@
   --yellow: #ffb21e;
   --green: #00bb8f;
   --blue: #1125d6;
+  --background-color: #ecf2ff;
 
   /******************** FONT FAMILY ******************/
   --hanken: "Hanken Grotesk", sans-serif;
@@ -29,11 +30,20 @@
 html,
 body {
   height: 100%;
-}
-
-html {
   font-size: 62.5%;
   font-family: var(--hanken);
+  background: var(--background-color);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary-component {
+  width: 37.5rem;
+  background: var(--white);
 }
 
 /******************* RESULTS SECTION  ****************/
@@ -45,8 +55,8 @@ html {
   padding-top: 2.5rem;
   padding-bottom: 3.5rem;
   gap: 2rem;
-  box-shadow: 0px 30px 60px rgba(61, 108, 236, 0.15);
-  border-radius: 0px 0px 32px 32px;
+  filter: drop-shadow(0px 30px 60px rgba(61, 108, 236, 0.15));
+  border-radius: 0 0 3.2rem 3.2rem;
 }
 
 .result {
@@ -219,10 +229,16 @@ html {
 }
 
 /********************* MEDIA QUERY *******************/
-@media (min-width: 43.75em) {
+@media (min-width: 90em) {
+  main {
+    height: 100%;
+  }
+
   .summary-component {
     display: flex;
-    height: 100vh;
+    width: 73.6rem;
+    height: 51.2rem;
+    border-radius: 3.2rem;
   }
 
   /********************* RESULTS SECTION ***************/
